@@ -17,48 +17,57 @@
 #ftr{
 	clear:both;
 }
-#cntnr{
-	clear:both
+#cntnrr{
+	clear:both;
+	width:60%;
+	margin:100px auto 0 auto;
+	min-height:300px;
 	}
-
-#cntnr .bs-title {
-	width: 100%;
+#nothing{
+	width:100%;
+	height:200px;
+}
+.bs-title {
+	width: 90%;
 	height: 50px;
 	/*border: 1px solid #ccc;*/
 	box-sizing: border-box;
-	text-align: center;
+	text-align: right;
 	clear:both;
-	font-size:2em;
-    font-weight:400;
-    padding:0 0 20px 0;
+	font-size:3em;
+    font-weight:600;
+    color:#fff;
+    margin:0 auto;
+    
 }
 
-#cntnr .bs-subtitle {
-	width: 100%;
+.bs-subtitle {
+	width: 90%;
 	height: 150px;
 	/*border: 1px solid #ccc;*/
 	box-sizing: border-box;
-	text-align: center;
-	font-size: 20px;
+	text-align: right;
+	font-size:1.3em;
+	font-weight:400;
+	color:#fff;
+	margin:0 auto;
+	line-height:2em;
 }
 
-#cntnr .bs-content {
+ .bs-content {
 	width: 100%;
-	height: 650px;
+	height: 800px;
 	/*border: 1px solid #ccc;*/
 	box-sizing: border-box;
-	margin: 0 0 70px 0;
+	margin: 0 auto;
 	text-align: center;
 	font-size: 18px;
-	background-image: url('<%=request.getContextPath()%>/images/car.png');
+	background-image: url('<%=request.getContextPath()%>/images/happy.jpg' ) ;  
 	background-size: cover;
+	background-position: center center;
+	
 }
-img{
-	width:100%;
-	height : auto;
-	margin : 0 auto;
-	object-fit: cover;
-}
+
 .card-header{
 	text-align: center;
 	font-size:2em;
@@ -110,7 +119,11 @@ img{
 .card-footer {
     padding: .75rem 1.25rem;
 }
-.btn-primary-select {
+.card-footer-A{
+	float:right;
+	padding: 0;
+}
+.btn-A {
 	font-weight :400;
 	text-align : center;
 	vertical-align: middle;
@@ -124,31 +137,83 @@ img{
     float: right;
     border-color: #367FFF;
 }
-.btn-primary-select a:hover {
+.btn-B{
+    margin: 0 0 0 20px;
+	float : right;	
+	padding: 13px 50px;
+	font-size: 1em;
+	background-color: #fff;
+	border-color: #fff;
+	color:black;
+	
+}
+#B{
+	width:90%;
+	height:100px;
+	padding-top:120px;
+	margin : 0 auto;
+	
+	
+}
+.btn-primary a:hover {
 	cursor: pointer;
+	
 }
 
 </style>
 </head>
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
-
-	<div id="cntnr">
+	
+	<div class="bs-content">
+		<div id="nothing">
+		</div>
+		<div class="bs-title">
+			주차장 내놓기
+		</div>
+		<div class="bs-subtitle">
+			<br /> <br />
+			사용하지 않는 주차공간이 있으신가요?<br />
+			주차 공간을 공유하시고 어따세워와 함께 빈공간을 새로움으로 채우세요
+		</div>
+		<div id = "B">
+			<div class="card-footer card-footer-A">
+					<c:choose>
+						<c:when test="${empty sessionScope.userId or empty sessionScope.userNickName }">
+							<a href="../user/userLogin.jsp" class="btn-A btn-B">장기 주차</a>
+						</c:when>
+						<c:when test="${!empty sessionScope.userId or !empty sessionScope.userNickName }">
+							<a href="../insertLongParking.jsp" class="btn-A btn-B">장기 주차</a>
+						</c:when>
+					</c:choose>
+			</div>
+			<div class="card-footer card-footer-A">
+					<c:choose>
+						<c:when test="${empty sessionScope.userId or empty sessionScope.userNickName }">
+							<a href="../user/userLogin.jsp" class="btn-A btn-B">단기 주차
+							</a>
+						</c:when>
+						<c:when test="${!empty sessionScope.userId or !empty sessionScope.userNickName }">
+							<a href="../insertShortParking.jsp" class="btn-A btn-B">단기 주차
+							</a>
+						</c:when>
+						<c:otherwise>
+						</c:otherwise>	
+					</c:choose>
+			</div>
+			
+		
+		</div>		
+				
+		
+	</div>
+	<div id="cntnrr">
 		<!-- 각자의 파트는 이곳에서부터 작업하실 수 있습니다. -->
 		<div class="cntnr-top-margin"></div>
 
 
-		<div class="bs-title">
-			<h1>주차장 내놓기</h1>
-		</div>
-		<div class="bs-subtitle">
-			<br /> <br />
-			<h2>사용하지 않는 주차공간이 있으신가요?</h2>
-			<h2>주차 공간을 공유하시고 어따세워와 함께 빈공간을 새로움으로 채우세요</h2>
-		</div>
-		<div class="bs-content">
-			
-		</div>
+		
+		
 		<div class="bs-select">
 		
 			<div id="short-parking">
@@ -162,11 +227,11 @@ img{
 				<div class="card-footer">
 				<c:choose>
 					<c:when test="${empty sessionScope.userId or empty sessionScope.userNickName }">
-						<a href="../user/userLogin.jsp" class="btn-primary-select">등록하기
+						<a href="../user/userLogin.jsp" class="btn-A">등록하기
 						</a>
 					</c:when>
 					<c:when test="${!empty sessionScope.userId or !empty sessionScope.userNickName }">
-						<a href="../insertShortParking.jsp" class="btn-primary-select">등록하기
+						<a href="../insertShortParking.jsp" class="btn-A">등록하기
 						</a>
 					</c:when>
 					<c:otherwise>
@@ -178,15 +243,15 @@ img{
 				<p class="card-header">장기주차</p>
 		         <p class="card-text">오늘부터 한달까지 등록 할 수 있습니다.<br>
 			            시작날짜과 종료날짜을 정해주세요. (하루단위)<br>
-			            하루당 요금을 등록하여 주세요.v
+			            하루당 요금을 등록하여 주세요.
 			      </p>
 			      <div class="card-footer">
 				<c:choose>
 					<c:when test="${empty sessionScope.userId or empty sessionScope.userNickName }">
-						<a href="../user/userLogin.jsp" class="btn-primary-select">등록하기</a>
+						<a href="../user/userLogin.jsp" class="btn-A">등록하기</a>
 					</c:when>
 					<c:when test="${!empty sessionScope.userId or !empty sessionScope.userNickName }">
-						<a href="../insertLongParking.jsp" class="btn-primary-select">등록하기</a>
+						<a href="../insertLongParking.jsp" class="btn-A">등록하기</a>
 					</c:when>
 				</c:choose>
 				</div>

@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/415f6f6023.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-1.12.4.min.js"></script>
    <title>어따세워?</title>
-   <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery-1.12.4.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
    <style>
       *{
@@ -208,15 +208,15 @@
                      <li><a href="<%=request.getContextPath()%>/noticeView.do">알람</a></li>
                      <li><a href="<%=request.getContextPath()%>/getRsvList.do?parker_id=${userId}">예약 내역</a></li>
                      <li><a href="<%=request.getContextPath()%>/getParkingList.do">공유 내역</a></li>
-                     <li><a href="<%=request.getContextPath()%>review_list.do?review_id=${userId}">리뷰 관리</a></li>
-                     <li><a href="<%=request.getContextPath()%>wish_list.do?user_id=${userId}">찜한 주차장</a></li>
+                     <li><a href="<%=request.getContextPath()%>/review_list.do?review_id=${userId}">리뷰 관리</a></li>
+                     <li><a href="<%=request.getContextPath()%>/wish_list.do?user_id=${userId}">찜한 주차장</a></li>
                      <li><a href="<%=request.getContextPath()%>/getUserinfo.do">회원 정보 관리</a></li>
                   </ul>
                    </li>
                 </c:if>
                 <li><a href="<%=request.getContextPath()%>/parking/selectParkingType.jsp">내 주차장 공유하기</a></li>
                 <li><a href="<%=request.getContextPath()%>/searchParkingList.do">장기주차</a></li>
-                <li><a href="#">단기주차</a></li>
+                <li><a href="<%=request.getContextPath()%>/searchShortParkingList.do">단기주차</a></li>
             </ul>
         </div>
     </div>
