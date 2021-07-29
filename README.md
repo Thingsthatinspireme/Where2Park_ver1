@@ -36,4 +36,5 @@
 - 채팅을 보냈을 때 상대방이 채팅방 접속 상태에 따라 읽음, 읽지않음으로 표시되는 기능
 ![chat](https://user-images.githubusercontent.com/73827546/127430184-27a0f11c-7fa8-4f69-a1c5-4a396495208e.png)
 <img width="944" alt="chatNotice" src="https://user-images.githubusercontent.com/73827546/127430116-6a6e0810-3445-4dc1-9dc5-71bc46851e7f.png">
-![chat2](https://user-images.githubusercontent.com/73827546/127430507-2aa68362-d942-4ccb-a66e-87cb02bc90ef.png)
+<img width="944" alt="chatNotice" src="https://user-images.githubusercontent.com/73827546/127430507-2aa68362-d942-4ccb-a66e-87cb02bc90ef.png">
+
