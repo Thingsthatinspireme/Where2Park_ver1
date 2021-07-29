@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/73827546/127436712-e5592dbc-a87b-45d0-8822-fdd7e65267d8.png)
 ### Where2Park (어따세워?)
 1.기간 : 2021.02.24-2021.04.20
 2.환경 : Apache Tomcat 8.0
@@ -37,4 +38,7 @@
 ![chat](https://user-images.githubusercontent.com/73827546/127430184-27a0f11c-7fa8-4f69-a1c5-4a396495208e.png)
 <img width="956" alt="chatNotice" src="https://user-images.githubusercontent.com/73827546/127430699-71b66c58-71e2-4867-936d-21a6e0962661.png">
 <img width="944" alt="chatNotice" src="https://user-images.githubusercontent.com/73827546/127430507-2aa68362-d942-4ccb-a66e-87cb02bc90ef.png">
+
+#### 동영상 
+[![ㅇㄸㅅㅇ동영상](https://img.youtube.com/vi/0s3gGtqJO2E/0.jpg)](https://youtu.be/0s3gGtqJO2E)
 
